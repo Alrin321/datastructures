@@ -1,10 +1,13 @@
 #include<stdio.h>
 int a[5]={200,150,100,80,70};
 void quicksort(int low ,int up)
-{    int j;
+{    while(low<up)
+  {
+     int j;
      j=partition(low,up);
-     quicksort(low,j);
+     quicksort(low,j-1);
      quicksort(j+1,up);
+}
 
 
 }
@@ -15,15 +18,15 @@ int partition(int start,int end)
     j=end;
     int k=a[i];
     int temp;
-    i++;
+    
     while(i<j)
     {
-        while(a[i]<k)
+        while(a[i]=<k)
         {
             i++;
         }
         while(a[j]>k)
-        {
+        {                            //swap with adreeses in case of quick and heap sort
             j--;
         }
         temp=a[i];
