@@ -1,5 +1,5 @@
 #include<stdio.h>
-int a[]={0};
+int a[100];
 void mergesort(int low,int high);
 void merge(int low,int high,int mid);
 void main()
@@ -38,7 +38,7 @@ void merge(int low,int high,int mid)
     int temp[20]={0};
     while(i<=mid && j<=high)
     {
-        if(a[i]<a[j])
+        if(a[i]<=a[j])
         {
             temp[k++]=a[i++];
         }
@@ -63,6 +63,7 @@ void merge(int low,int high,int mid)
     {
         a[i]=temp[i];
     }
+}
 
 
 }
